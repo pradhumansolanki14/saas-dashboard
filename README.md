@@ -1,18 +1,143 @@
-# React + Vite
+# SaaS Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern SaaS dashboard built with React, Vite, Tailwind CSS, and Framer Motion featuring analytics, user management, orders, notifications, responsive layouts, reusable UI architecture, and premium glassmorphism design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Preview
 
-## React Compiler
+A fully responsive frontend SaaS dashboard UI with:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* Modern glassmorphism design
+* Reusable UI architecture
+* Smooth animations
+* Analytics dashboard
+* Orders management
+* User management
+* Settings system
+* Command menu
+* Dark mode support
+* Responsive layouts
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* Vite
+* Tailwind CSS
+* Framer Motion
+* Recharts
+* React Icons
+* Zustand
+* React Router DOM
+
+---
+
+## Features
+
+### Dashboard
+
+* Analytics overview
+* Revenue insights
+* Interactive charts
+* Traffic source visualization
+* KPI cards
+
+### Users Management
+
+* User table
+* Search functionality
+* User details drawer
+* Filters and status badges
+* Responsive table layout
+
+### Orders Management
+
+* Orders table
+* Transaction overview
+* Order details drawer
+* Status indicators
+
+### Settings
+
+* Profile settings
+* Notification preferences
+* Appearance customization
+* Billing section
+
+### UI System
+
+* Reusable components
+* App buttons
+* Status badges
+* Section headers
+* Motion wrapper
+* Card system
+
+### UX Features
+
+* Command menu
+* Sidebar navigation
+* Responsive design
+* Dark mode
+* Smooth animations
+* Glassmorphism effects
+
+---
+
+## Installation
+
+```bash
+npm install
+```
+
+---
+
+## Run Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+## Build For Production
+
+```bash
+npm run build
+```
+
+---
+
+## Project Structure
+
+```bash
+src/
+ ├── components/
+ ├── pages/
+ ├── data/
+ ├── store/
+ ├── lib/
+ ├── hooks/
+ ├── assets/
+ └── ui/
+```
+
+---
+
+## Future Improvements
+
+* Lazy loading
+* Bundle optimization
+* Accessibility improvements
+* Backend integration
+* Authentication system
+* Real-time notifications
+* Advanced filtering
+
+---
+
+## Author
+
+Pradhuman Solanki
