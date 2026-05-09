@@ -1,0 +1,356 @@
+export const userStats = [
+  {
+    title: "Total Users",
+    value: "24.8K",
+    growth: "+12.4%",
+  },
+
+  {
+    title: "Active Users",
+    value: "18.2K",
+    growth: "+8.2%",
+  },
+
+  {
+    title: "Premium Users",
+    value: "8.4K",
+    growth: "+18.1%",
+  },
+
+  {
+    title: "Churn Rate",
+    value: "2.4%",
+    growth: "-0.8%",
+  },
+];
+
+export const usersTableData = [
+  {
+    id: 1,
+    name: "Sophia Carter",
+    email: "sophia@example.com",
+    role: "Product Designer",
+    plan: "Enterprise",
+    activity: "Active now",
+    revenue: "$12,400",
+    status: "Active",
+  },
+
+  {
+    id: 2,
+    name: "Liam Johnson",
+    email: "liam@example.com",
+    role: "Frontend Developer",
+    plan: "Pro",
+    activity: "12 min ago",
+    revenue: "$8,240",
+    status: "Pending",
+  },
+
+  {
+    id: 3,
+    name: "Emma Williams",
+    email: "emma@example.com",
+    role: "Marketing Lead",
+    plan: "Basic",
+    activity: "Offline",
+    revenue: "$1,840",
+    status: "Inactive",
+  },
+
+  {
+    id: 4,
+    name: "Noah Brown",
+    email: "noah@example.com",
+    role: "Backend Engineer",
+    plan: "Enterprise",
+    activity: "2 min ago",
+    revenue: "$18,900",
+    status: "Active",
+  },
+
+  {
+    id: 5,
+    name: "Olivia Davis",
+    email: "olivia@example.com",
+    role: "Sales Manager",
+    plan: "Pro",
+    activity: "1 hour ago",
+    revenue: "$7,650",
+    status: "Active",
+  },
+
+  {
+    id: 6,
+    name: "James Miller",
+    email: "james@example.com",
+    role: "UI Engineer",
+    plan: "Enterprise",
+    activity: "5 min ago",
+    revenue: "$14,200",
+    status: "Active",
+  },
+
+  {
+    id: 7,
+    name: "Isabella Wilson",
+    email: "isabella@example.com",
+    role: "Customer Success",
+    plan: "Pro",
+    activity: "25 min ago",
+    revenue: "$6,400",
+    status: "Pending",
+  },
+
+  {
+    id: 8,
+    name: "Benjamin Moore",
+    email: "benjamin@example.com",
+    role: "Data Analyst",
+    plan: "Basic",
+    activity: "Offline",
+    revenue: "$2,120",
+    status: "Inactive",
+  },
+
+  {
+    id: 9,
+    name: "Mia Taylor",
+    email: "mia@example.com",
+    role: "Operations Manager",
+    plan: "Enterprise",
+    activity: "Active now",
+    revenue: "$24,800",
+    status: "Active",
+  },
+
+  {
+    id: 10,
+    name: "Lucas Anderson",
+    email: "lucas@example.com",
+    role: "DevOps Engineer",
+    plan: "Enterprise",
+    activity: "18 min ago",
+    revenue: "$16,300",
+    status: "Active",
+  },
+
+  {
+    id: 11,
+    name: "Charlotte Thomas",
+    email: "charlotte@example.com",
+    role: "Growth Strategist",
+    plan: "Pro",
+    activity: "40 min ago",
+    revenue: "$9,500",
+    status: "Pending",
+  },
+
+  {
+    id: 12,
+    name: "Henry Martinez",
+    email: "henry@example.com",
+    role: "Security Engineer",
+    plan: "Enterprise",
+    activity: "7 min ago",
+    revenue: "$21,900",
+    status: "Active",
+  },
+
+  {
+    id: 13,
+    name: "Amelia White",
+    email: "amelia@example.com",
+    role: "Brand Manager",
+    plan: "Basic",
+    activity: "Offline",
+    revenue: "$3,100",
+    status: "Inactive",
+  },
+
+  {
+    id: 14,
+    name: "Elijah Harris",
+    email: "elijah@example.com",
+    role: "Full Stack Developer",
+    plan: "Pro",
+    activity: "15 min ago",
+    revenue: "$11,200",
+    status: "Active",
+  },
+
+  {
+    id: 15,
+    name: "Harper Martin",
+    email: "harper@example.com",
+    role: "Community Manager",
+    plan: "Basic",
+    activity: "1 day ago",
+    revenue: "$1,240",
+    status: "Inactive",
+  },
+
+  {
+    id: 16,
+    name: "Daniel Thompson",
+    email: "daniel@example.com",
+    role: "Cloud Architect",
+    plan: "Enterprise",
+    activity: "3 min ago",
+    revenue: "$28,400",
+    status: "Active",
+  },
+
+  {
+    id: 17,
+    name: "Evelyn Garcia",
+    email: "evelyn@example.com",
+    role: "HR Manager",
+    plan: "Pro",
+    activity: "50 min ago",
+    revenue: "$5,820",
+    status: "Pending",
+  },
+
+  {
+    id: 18,
+    name: "Michael Robinson",
+    email: "michael@example.com",
+    role: "AI Engineer",
+    plan: "Enterprise",
+    activity: "Active now",
+    revenue: "$32,700",
+    status: "Active",
+  },
+
+  {
+    id: 19,
+    name: "Abigail Clark",
+    email: "abigail@example.com",
+    role: "Content Strategist",
+    plan: "Basic",
+    activity: "Offline",
+    revenue: "$2,420",
+    status: "Inactive",
+  },
+
+  {
+    id: 20,
+    name: "Alexander Lewis",
+    email: "alexander@example.com",
+    role: "Technical Lead",
+    plan: "Enterprise",
+    activity: "9 min ago",
+    revenue: "$19,600",
+    status: "Active",
+  },
+  {
+  id: 21,
+  name: "Scarlett Walker",
+  email: "scarlett@example.com",
+  role: "UX Researcher",
+  plan: "Pro",
+  activity: "11 min ago",
+  revenue: "$7,920",
+  status: "Active",
+},
+
+{
+  id: 22,
+  name: "Matthew Hall",
+  email: "matthew@example.com",
+  role: "Machine Learning Engineer",
+  plan: "Enterprise",
+  activity: "Active now",
+  revenue: "$35,200",
+  status: "Active",
+},
+
+{
+  id: 23,
+  name: "Victoria Allen",
+  email: "victoria@example.com",
+  role: "Business Analyst",
+  plan: "Basic",
+  activity: "Offline",
+  revenue: "$2,980",
+  status: "Inactive",
+},
+
+{
+  id: 24,
+  name: "Joseph Young",
+  email: "joseph@example.com",
+  role: "Mobile Developer",
+  plan: "Pro",
+  activity: "27 min ago",
+  revenue: "$10,840",
+  status: "Pending",
+},
+
+{
+  id: 25,
+  name: "Grace Hernandez",
+  email: "grace@example.com",
+  role: "Product Owner",
+  plan: "Enterprise",
+  activity: "6 min ago",
+  revenue: "$22,300",
+  status: "Active",
+},
+
+{
+  id: 26,
+  name: "David King",
+  email: "david@example.com",
+  role: "Cybersecurity Specialist",
+  plan: "Enterprise",
+  activity: "14 min ago",
+  revenue: "$26,900",
+  status: "Active",
+},
+
+{
+  id: 27,
+  name: "Lily Wright",
+  email: "lily@example.com",
+  role: "Social Media Manager",
+  plan: "Basic",
+  activity: "1 day ago",
+  revenue: "$1,680",
+  status: "Inactive",
+},
+
+{
+  id: 28,
+  name: "Christopher Scott",
+  email: "christopher@example.com",
+  role: "Solutions Architect",
+  plan: "Enterprise",
+  activity: "4 min ago",
+  revenue: "$31,400",
+  status: "Active",
+},
+
+{
+  id: 29,
+  name: "Zoey Green",
+  email: "zoey@example.com",
+  role: "QA Engineer",
+  plan: "Pro",
+  activity: "38 min ago",
+  revenue: "$8,740",
+  status: "Pending",
+},
+
+{
+  id: 30,
+  name: "Andrew Baker",
+  email: "andrew@example.com",
+  role: "Technical Consultant",
+  plan: "Enterprise",
+  activity: "Active now",
+  revenue: "$27,600",
+  status: "Active",
+},
+];
