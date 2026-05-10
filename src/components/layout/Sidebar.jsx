@@ -10,6 +10,8 @@ import {
 
 import { NavLink } from "react-router-dom";
 
+import logo from "../../assets/logo.svg";
+
 import {
   AnimatePresence,
   motion,
@@ -253,35 +255,18 @@ const SidebarContent = ({
               gap-3
             "
             >
-              <div
-                className="
-                w-12
-                h-12
+             <img
+  src={logo}
+  alt="Logo"
+  className="
+  w-12
+  h-12
 
-                rounded-2xl
+  object-contain
 
-                bg-gradient-to-br
-                from-cyan-500
-                to-blue-500
-
-                flex
-                items-center
-                justify-center
-
-                shadow-lg
-                shadow-cyan-500/30
-              "
-              >
-                <span
-                  className="
-                  text-white
-                  font-bold
-                  text-xl
-                "
-                >
-                  S
-                </span>
-              </div>
+  drop-shadow-[0_10px_30px_rgba(6,182,212,0.25)]
+"
+/>
 
               <div>
                 <h1
