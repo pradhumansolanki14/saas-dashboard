@@ -32,7 +32,306 @@ const OrdersTable = ({
         p-0
       "
       >
-        <div className="overflow-x-auto">
+        {/* MOBILE CARDS */}
+        <div className="block md:hidden  space-y-4">
+          {orders.map(
+            (order, index) => (
+              <div
+                key={index}
+                className="
+                p-4
+
+                rounded-[28px]
+
+                bg-black/[0.03]
+                dark:bg-white/[0.03]
+
+                border
+                border-black/5
+                dark:border-white/10
+
+                space-y-4
+              "
+              >
+                {/* TOP */}
+                <div className="flex items-center gap-4">
+                  <img
+                    src={`https://i.pravatar.cc/150?img=${
+                      index + 10
+                    }`}
+                    alt=""
+                    className="
+                    w-14
+                    h-14
+
+                    rounded-2xl
+
+                    object-cover
+                  "
+                  />
+
+                  <div className="flex-1 min-w-0">
+                    <h3
+                      className="
+                      font-semibold
+
+                      truncate
+
+                      text-slate-900
+                      dark:text-white
+                    "
+                    >
+                      {order.customer}
+                    </h3>
+
+                    <p
+                      className="
+                      text-sm
+
+                      truncate
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      {order.email}
+                    </p>
+                  </div>
+
+                 
+                </div>
+
+                {/* ORDER INFO */}
+                <div
+                  className="
+                  grid
+                  grid-cols-2
+
+                  gap-4
+                "
+                >
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Transaction
+                    </p>
+
+                    <h4
+                      className="
+                      mt-1
+
+                      font-medium
+
+                      text-slate-900
+                      dark:text-white
+                    "
+                    >
+                      {order.id}
+                    </h4>
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Amount
+                    </p>
+
+                    <h4
+                      className="
+                      mt-1
+
+                      font-semibold
+
+                      text-slate-900
+                      dark:text-white
+                    "
+                    >
+                      {order.amount}
+                    </h4>
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Plan
+                    </p>
+
+                    <div className="mt-2">
+                      <StatusBadge status="Enterprise">
+                        {order.plan}
+                      </StatusBadge>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Status
+                    </p>
+
+                    <div className="mt-2">
+                      <StatusBadge
+                        status={
+                          order.status ===
+                          "Paid"
+                            ? "Active"
+                            : order.status ===
+                              "Pending"
+                            ? "Pending"
+                            : order.status ===
+                              "Refunded"
+                            ? "Pro"
+                            : "Failed"
+                        }
+                      >
+                        {order.status}
+                      </StatusBadge>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Payment
+                    </p>
+
+                    <h4
+                      className="
+                      mt-1
+
+                      font-medium
+
+                      text-slate-900
+                      dark:text-white
+                    "
+                    >
+                      {order.payment}
+                    </h4>
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Date
+                    </p>
+
+                    <h4
+                      className="
+                      mt-1
+
+                      font-medium
+
+                      text-slate-900
+                      dark:text-white
+                    "
+                    >
+                      {order.date}
+                    </h4>
+                  </div>
+                </div>
+
+                {/* ACTIONS */}
+                <div className="flex items-center gap-3 pt-2">
+                  <button
+                    onClick={() =>
+                      setSelectedOrder(
+                        order
+                      )
+                    }
+                    className="
+                    flex-1
+
+                    h-11
+
+                    rounded-2xl
+
+                    bg-black/[0.03]
+                    dark:bg-white/[0.03]
+
+                    border
+                    border-black/5
+                    dark:border-white/10
+
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
+
+                    text-sm
+                    font-medium
+                  "
+                  >
+                    <FiEye size={16} />
+                    View
+                  </button>
+
+                  <button
+                    className="
+                    w-11
+                    h-11
+
+                    rounded-2xl
+
+                    bg-black/[0.03]
+                    dark:bg-white/[0.03]
+
+                    border
+                    border-black/5
+                    dark:border-white/10
+
+                    flex
+                    items-center
+                    justify-center
+                  "
+                  >
+                    <FiMoreHorizontal
+                      size={18}
+                    />
+                  </button>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+
+        {/* DESKTOP TABLE */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full min-w-[1100px]">
             {/* HEAD */}
             <thead>
@@ -223,7 +522,6 @@ const OrdersTable = ({
                     {/* ACTIONS */}
                     <td className="px-6 py-5">
                       <div className="flex items-center gap-2">
-                        {/* VIEW */}
                         <button
                           onClick={() =>
                             setSelectedOrder(
@@ -246,21 +544,11 @@ const OrdersTable = ({
                           flex
                           items-center
                           justify-center
-
-                          text-slate-700
-                          dark:text-slate-300
-
-                          transition-all
-                          duration-300
-
-                          hover:bg-black/[0.05]
-                          dark:hover:bg-white/[0.05]
                         "
                         >
                           <FiEye size={18} />
                         </button>
 
-                        {/* MORE */}
                         <button
                           className="
                           w-10
@@ -278,15 +566,6 @@ const OrdersTable = ({
                           flex
                           items-center
                           justify-center
-
-                          text-slate-700
-                          dark:text-slate-300
-
-                          transition-all
-                          duration-300
-
-                          hover:bg-black/[0.05]
-                          dark:hover:bg-white/[0.05]
                         "
                         >
                           <FiMoreHorizontal

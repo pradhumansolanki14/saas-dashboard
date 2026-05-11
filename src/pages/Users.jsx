@@ -12,7 +12,6 @@ import UsersTable from "../components/users/UsersTable";
 
 import UserDetailsDrawer from "../components/users/UserDetailsDrawer";
 
-import SectionHeader from "../components/ui/SectionHeader";
 
 import AppCard from "../components/ui/AppCard";
 
@@ -43,10 +42,95 @@ const Users = () => {
   return (
     <div className="space-y-6">
       {/* HEADER */}
-      <SectionHeader
-        title="Users Management"
-        subtitle="Manage customers, subscriptions, activity, and engagement."
-      />
+  
+<AppCard
+  glow
+  className="
+    relative
+    overflow-hidden
+
+    p-5
+    sm:p-6
+  "
+>
+  {/* GLOW */}
+  <div
+    className="
+    absolute
+    top-[-80px]
+    right-[-80px]
+
+    w-[180px]
+    h-[180px]
+
+    bg-cyan-500/10
+
+    blur-[90px]
+
+    rounded-full
+  "
+  />
+
+  <div className="relative z-10">
+    {/* BADGE */}
+    <div
+      className="
+      inline-flex
+
+      px-3
+      py-1
+
+      rounded-full
+
+      bg-cyan-500/10
+
+      text-cyan-500
+
+      text-[11px]
+      font-semibold
+      tracking-wide
+    "
+    >
+      USER CONTROL CENTER
+    </div>
+
+    {/* TITLE */}
+    <h1
+      className="
+      mt-2
+
+      text-2xl
+      sm:text-3xl
+
+      font-bold
+      tracking-tight
+
+      text-slate-900
+      dark:text-white
+    "
+    >
+      Users Management
+    </h1>
+
+    {/* SUBTITLE */}
+    <p
+      className="
+      mt-2
+
+      text-sm
+      sm:text-base
+
+      leading-relaxed
+
+      text-slate-600
+      dark:text-slate-400
+    "
+    >
+      Manage customers, subscriptions,
+      activity, and engagement.
+    </p>
+  </div>
+</AppCard>
 
       {/* STATS */}
       <Motion

@@ -21,50 +21,10 @@ import {
   transitions,
 } from "../../lib/motion";
 
-const analyticsData = {
-  "24H": [
-    { name: "1AM", revenue: 1200 },
-    { name: "3AM", revenue: 900 },
-    { name: "6AM", revenue: 1800 },
-    { name: "9AM", revenue: 2600 },
-    { name: "12PM", revenue: 4200 },
-    { name: "3PM", revenue: 3900 },
-    { name: "6PM", revenue: 5800 },
-    { name: "9PM", revenue: 5100 },
-  ],
-
-  "7D": [
-    { name: "Mon", revenue: 4200 },
-    { name: "Tue", revenue: 6100 },
-    { name: "Wed", revenue: 5400 },
-    { name: "Thu", revenue: 7900 },
-    { name: "Fri", revenue: 9200 },
-    { name: "Sat", revenue: 7600 },
-    { name: "Sun", revenue: 9800 },
-  ],
-
-  "30D": [
-    { name: "Week 1", revenue: 22000 },
-    { name: "Week 2", revenue: 18000 },
-    { name: "Week 3", revenue: 34000 },
-    { name: "Week 4", revenue: 27000 },
-  ],
-
-  "12M": [
-    { name: "Jan", revenue: 12000 },
-    { name: "Feb", revenue: 18000 },
-    { name: "Mar", revenue: 15000 },
-    { name: "Apr", revenue: 32000 },
-    { name: "May", revenue: 28000 },
-    { name: "Jun", revenue: 42000 },
-    { name: "Jul", revenue: 39000 },
-    { name: "Aug", revenue: 58000 },
-    { name: "Sep", revenue: 51000 },
-    { name: "Oct", revenue: 70000 },
-    { name: "Nov", revenue: 66000 },
-    { name: "Dec", revenue: 84000 },
-  ],
-};
+import {
+  analyticsData,
+  metricsData,
+} from "../../data/revenueInsightsData";
 
 const RevenueInsights = () => {
   const [activeFilter, setActiveFilter] =
@@ -74,6 +34,9 @@ const RevenueInsights = () => {
     return analyticsData[activeFilter];
   }, [activeFilter]);
 
+  const metrics =
+    metricsData[activeFilter];
+
   const totalRevenue = useMemo(() => {
     return chartData.reduce(
       (acc, item) =>
@@ -81,37 +44,6 @@ const RevenueInsights = () => {
       0
     );
   }, [chartData]);
-
-  // REALISTIC METRICS
-  const metrics = [
-    {
-      label: "MRR",
-      value: "$48.2K",
-      growth: "+12.4%",
-      positive: true,
-    },
-
-    {
-      label: "Conversion",
-      value: "18.6%",
-      growth: "-2.1%",
-      positive: false,
-    },
-
-    {
-      label: "Retention",
-      value: "92.1%",
-      growth: "+4.8%",
-      positive: true,
-    },
-
-    {
-      label: "Churn",
-      value: "3.4%",
-      growth: "+1.2%",
-      positive: false,
-    },
-  ];
 
   return (
     <Motion
@@ -149,7 +81,8 @@ const RevenueInsights = () => {
           relative
           z-10
 
-          p-6
+          p-4
+          sm:p-6
 
           flex
           flex-col
@@ -178,7 +111,8 @@ const RevenueInsights = () => {
               className="
               mt-3
 
-              text-4xl
+              text-3xl
+              sm:text-4xl
               lg:text-5xl
 
               font-bold
@@ -196,8 +130,10 @@ const RevenueInsights = () => {
               mt-4
 
               flex
+              flex-wrap
               items-center
-              gap-3
+              gap-2
+              sm:gap-3
             "
             >
               <StatusBadge status="Active">
@@ -220,9 +156,13 @@ const RevenueInsights = () => {
           {/* FILTERS */}
           <div
             className="
-            flex
-            items-center
+            grid
+            grid-cols-4
+
             gap-2
+
+            w-full
+            sm:w-auto
 
             p-1
 
@@ -253,12 +193,17 @@ const RevenueInsights = () => {
                     : "secondary"
                 }
                 className="
-                h-[42px]
-                px-5
+                h-[40px]
+
+                px-2
+                sm:px-5
 
                 rounded-xl
 
-                text-sm
+                text-[11px]
+                sm:text-sm
+
+                w-full
               "
               >
                 {item}
@@ -270,7 +215,8 @@ const RevenueInsights = () => {
         {/* KPI GRID */}
         <div
           className="
-          px-6
+          px-4
+          sm:px-6
 
           grid
           grid-cols-2
@@ -304,7 +250,9 @@ const RevenueInsights = () => {
                 className="
                 mt-3
 
-                text-3xl
+                text-2xl
+                sm:text-3xl
+
                 font-bold
 
                 text-slate-900
@@ -330,7 +278,7 @@ const RevenueInsights = () => {
         </div>
 
         {/* CHART */}
-        <div className="h-[420px] px-2 pt-6">
+        <div className="h-[300px] sm:h-[420px] px-2 pt-6">
           <ResponsiveContainer
             width="100%"
             height="100%"
@@ -394,8 +342,11 @@ const RevenueInsights = () => {
         {/* FOOTER INSIGHTS */}
         <div
           className="
-          px-6
-          pb-6
+          px-4
+          sm:px-6
+
+          pb-4
+          sm:pb-6
 
           grid
           grid-cols-1
@@ -449,7 +400,9 @@ const RevenueInsights = () => {
                 className="
                 mt-3
 
-                text-xl
+                text-lg
+                sm:text-xl
+
                 font-bold
 
                 text-slate-900

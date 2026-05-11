@@ -141,12 +141,13 @@ const UsersTable = ({
           relative
           z-10
 
-          p-6
+          p-2
+          sm:p-6
 
           border-b
           border-black/5
           dark:border-white/10
-
+          
           flex
           flex-col
           xl:flex-row
@@ -161,6 +162,8 @@ const UsersTable = ({
             <h2
               className="
               text-2xl
+              md:text-3xl
+
               font-bold
               tracking-tight
 
@@ -186,13 +189,32 @@ const UsersTable = ({
           </div>
 
           {/* ACTIONS */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div
+            className="
+            flex
+            flex-col
+            sm:flex-row
+
+            items-stretch
+            sm:items-center
+           
+            gap-2
+  
+            w-full
+            xl:w-auto
+          "
+          >
             {/* FILTERS */}
             <div
               className="
-              flex
-              items-center
+             flex
+items-center
+
+w-full
+
               gap-2
+
+              w-full
 
               p-1
 
@@ -218,12 +240,18 @@ const UsersTable = ({
                     setFilter(status)
                   }
                   className={`
-                    h-[42px]
-                    px-5
+                    h-[40px]
+
+                    px-3
+                    sm:px-5
+
+                    text-xs
+                    sm:text-sm
+
+                    flex-1
 
                     rounded-xl
 
-                    text-sm
                     font-medium
 
                     ${
@@ -244,7 +272,12 @@ const UsersTable = ({
             </div>
 
             {/* EXPORT */}
-            <AppButton>
+            <AppButton
+              className="
+              w-full
+              sm:w-auto
+            "
+            >
               <FiDownload />
 
               Export
@@ -257,7 +290,9 @@ const UsersTable = ({
           0 && (
           <div
             className="
-            px-6
+            px-4
+            sm:px-6
+
             py-4
 
             border-b
@@ -294,8 +329,211 @@ const UsersTable = ({
           </div>
         )}
 
-        {/* TABLE */}
-        <div className="overflow-x-auto">
+        {/* MOBILE CARDS */}
+        <div className="block md:hidden mt-5 space-y-4">
+          {paginatedUsers.map(
+            (user, index) => (
+              <div
+                key={user.id}
+                onClick={() =>
+                  onSelectUser(user)
+                }
+                className="
+                p-3
+
+                rounded-[28px]
+
+                bg-black/[0.03]
+                dark:bg-white/[0.03]
+
+                border
+                border-black/5
+                dark:border-white/10
+
+                space-y-4
+              "
+              >
+                {/* TOP */}
+                <div className="flex items-center gap-4">
+                  <img
+                    src={
+                      user.avatar ||
+                      avatarFallbacks[
+                        index %
+                          avatarFallbacks.length
+                      ]
+                    }
+                    alt=""
+                    className="
+                    w-14
+                    h-14
+
+                    rounded-2xl
+
+                    object-cover
+                  "
+                  />
+
+                  <div className="flex-1 min-w-0">
+                    <h3
+                      className="
+                      font-semibold
+
+                      truncate
+
+                      text-slate-900
+                      dark:text-white
+                    "
+                    >
+                      {user.name}
+                    </h3>
+
+                    <p
+                      className="
+                      text-sm
+
+                      truncate
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      {user.email}
+                    </p>
+                  </div>
+
+                  <input
+                    type="checkbox"
+                    checked={selectedUsers.includes(
+                      user.id
+                    )}
+                    onChange={(e) => {
+                      e.stopPropagation();
+
+                      toggleSelect(
+                        user.id
+                      );
+                    }}
+                  />
+                </div>
+
+                {/* GRID */}
+                <div
+                  className="
+                  grid
+                  grid-cols-2
+
+                  gap-4
+                "
+                >
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Role
+                    </p>
+
+                    <h4
+                      className="
+                      mt-1
+
+                      font-medium
+
+                      text-slate-900
+                      dark:text-white
+                    "
+                    >
+                      {user.role}
+                    </h4>
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Revenue
+                    </p>
+
+                    <h4
+                      className="
+                      mt-1
+
+                      font-semibold
+
+                      text-slate-900
+                      dark:text-white
+                    "
+                    >
+                      {user.revenue}
+                    </h4>
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Plan
+                    </p>
+
+                    <div className="mt-2">
+                      <StatusBadge status="Enterprise">
+                        {user.plan}
+                      </StatusBadge>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p
+                      className="
+                      text-xs
+
+                      text-slate-500
+                      dark:text-slate-400
+                    "
+                    >
+                      Status
+                    </p>
+
+                    <div className="mt-2">
+                      <StatusBadge
+                        status={
+                          user.status
+                        }
+                      >
+                        {user.status}
+                      </StatusBadge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+
+        {/* DESKTOP TABLE */}
+        <div
+          className="
+          hidden
+          md:block
+
+          overflow-x-auto
+        "
+        >
           <table className="w-full">
             {/* HEAD */}
             <thead
@@ -548,28 +786,40 @@ const UsersTable = ({
         )}
 
         {/* FOOTER */}
-        <div
-          className="
-          px-6
-          py-5
+       <div
+  className="
+  px-4
+  sm:px-6
 
-          border-t
-          border-black/5
-          dark:border-white/10
+  py-5
 
-          flex
-          items-center
-          justify-between
-        "
-        >
-          <p
-            className="
-            text-sm
+  border-t
+  border-black/5
+  dark:border-white/10
 
-            text-slate-500
-            dark:text-slate-400
-          "
-          >
+  flex
+  flex-col
+  sm:flex-row
+
+  items-end
+  sm:items-center
+
+  gap-4
+
+  justify-between
+"
+>
+         <p
+  className="
+  text-sm
+
+  text-right
+  sm:text-left
+
+  text-slate-500
+  dark:text-slate-400
+"
+>
             Showing{" "}
             {
               paginatedUsers.length
@@ -582,8 +832,7 @@ const UsersTable = ({
           </p>
 
           {/* PAGINATION */}
-          <div className="flex items-center gap-3">
-            {/* LEFT BUTTON */}
+          <div className="flex items-center gap-3 self-end sm:self-auto">
             <button
               disabled={
                 currentPage === 1
@@ -618,7 +867,6 @@ const UsersTable = ({
               <FiChevronLeft />
             </button>
 
-            {/* PAGE */}
             <div
               className="
               px-4
@@ -634,7 +882,6 @@ const UsersTable = ({
               {totalPages}
             </div>
 
-            {/* RIGHT BUTTON */}
             <button
               disabled={
                 currentPage ===

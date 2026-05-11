@@ -61,7 +61,10 @@ const AppButton = ({
       onClick={onClick}
       className={`
         h-[50px]
-        px-5
+        md:px-5
+        
+
+
 
         rounded-2xl
 

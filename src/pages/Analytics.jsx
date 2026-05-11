@@ -38,62 +38,148 @@ const Analytics = () => {
   return (
     <div className="space-y-6">
       {/* HEADER */}
+   
+<AppCard
+  glow
+  className="
+    relative
+    overflow-hidden
+
+    p-5
+    sm:p-6
+  "
+>
+  {/* GLOW */}
+  <div
+    className="
+    absolute
+    top-[-80px]
+    right-[-80px]
+
+    w-[180px]
+    h-[180px]
+
+    bg-cyan-500/10
+
+    blur-[90px]
+
+    rounded-full
+  "
+  />
+
+  <div
+    className="
+    relative
+    z-10
+
+    flex
+    flex-col
+    lg:flex-row
+    lg:items-center
+    lg:justify-between
+
+    gap-5
+  "
+  >
+    {/* LEFT */}
+    <div>
+      {/* BADGE */}
       <div
         className="
-        flex
-        flex-col
-        lg:flex-row
-        lg:items-center
-        lg:justify-between
+        inline-flex
 
-        gap-5
+        px-3
+        py-1
+
+        rounded-full
+
+        bg-cyan-500/10
+
+        text-cyan-500
+
+        text-[11px]
+        font-semibold
+        tracking-wide
       "
       >
-        <SectionHeader
-          title="Analytics"
-          subtitle="Deep platform insights and business intelligence."
-        />
+        LIVE INSIGHTS
+      </div>
 
-        {/* FILTERS */}
-        <div
+      <h1
+        className="
+        mt-2
+
+        text-2xl
+        sm:text-3xl
+
+        font-bold
+        tracking-tight
+
+        text-slate-900
+        dark:text-white
+      "
+      >
+        Analytics
+      </h1>
+
+      <p
+        className="
+        mt-2
+
+        text-sm
+        sm:text-base
+
+        text-slate-600
+        dark:text-slate-400
+      "
+      >
+        Deep platform insights and business intelligence.
+      </p>
+    </div>
+
+    {/* FILTERS */}
+    <div
+      className="
+      flex
+      items-center
+      md:gap-2
+    
+
+      overflow-x-auto
+    justify-between
+
+      [scrollbar-width:none]
+      [-ms-overflow-style:none]
+    "
+    >
+      {analyticsFilters.map((filter) => (
+        <AppButton
+          key={filter}
+          onClick={() =>
+            setActiveFilter(filter)
+          }
+          variant={
+            activeFilter === filter
+              ? "primary"
+              : "secondary"
+          }
           className="
-          flex
-          items-center
-          gap-2
+          h-[44px]
+          p-2.5
+          text-xs
+          md:text-sm
+          
+          whitespace-nowrap
 
-          overflow-x-auto
+          shrink-0
         "
         >
-          {analyticsFilters.map(
-            (filter) => (
-              <AppButton
-                key={filter}
-                onClick={() =>
-                  setActiveFilter(
-                    filter
-                  )
-                }
-                variant={
-                  activeFilter ===
-                  filter
-                    ? "primary"
-                    : "secondary"
-                }
-                className="
-                h-[46px]
-                px-5
-
-                text-sm
-
-                whitespace-nowrap
-              "
-              >
-                {filter}
-              </AppButton>
-            )
-          )}
-        </div>
-      </div>
+          {filter}
+        </AppButton>
+      ))}
+    </div>
+  </div>
+</AppCard>
 
       {/* HERO */}
       <Motion
@@ -169,6 +255,7 @@ const Analytics = () => {
 
               font-bold
               leading-tight
+            
             "
             >
               {
@@ -177,7 +264,7 @@ const Analytics = () => {
             </h1>
 
             <div className="mt-4 flex items-center gap-3">
-              <StatusBadge status="Pro">
+              <StatusBadge status="" className=" border-1 border-gray-300">
                 {
                   currentData.growth
                 }
@@ -191,79 +278,82 @@ const Analytics = () => {
           </div>
 
           {/* RIGHT STATS */}
-          <div
-            className="
-            grid
-            grid-cols-3
+        <div
+  className="
+  flex
+  items-stretch
+  justify-between
+  -mt-2 md:mt-0
+  gap-2
+  md:gap-4
 
-            gap-4
+  w-full
+  xl:w-auto
+"
+>
+  {[
+    {
+      label: "Visitors",
+      value: currentData.visitors,
+    },
 
-            w-full
-            xl:w-auto
-          "
-          >
-            {[
-              {
-                label:
-                  "Visitors",
-                value:
-                  currentData.visitors,
-              },
+    {
+      label: "Avg Session",
+      value: currentData.session,
+    },
 
-              {
-                label:
-                  "Avg Session",
-                value:
-                  currentData.session,
-              },
+    {
+      label: "Countries",
+      value: currentData.countries,
+    },
+  ].map((item) => (
+    <div
+      key={item.label}
+      className="
+      flex-1
+      xl:flex-none
 
-              {
-                label:
-                  "Countries",
-                value:
-                  currentData.countries,
-              },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="
-                min-w-[110px]
+      xl:min-w-[110px]
 
-                rounded-3xl
+      rounded-3xl
 
-                bg-white/10
+      bg-white/10
 
-                backdrop-blur-xl
+      backdrop-blur-xl
 
-                border
-                border-white/10
+      border
+      border-white/10
 
-                p-4
-              "
-              >
-                <h2
-                  className="
-                  text-2xl
-                  font-bold
-                "
-                >
-                  {item.value}
-                </h2>
+      p-2.5
+      md:p-4
+    "
+    >
+      <h2
+        className="
+        text-lg
+        md:text-2xl
 
-                <p
-                  className="
-                  mt-1
+        font-bold
+      "
+      >
+        {item.value}
+      </h2>
 
-                  text-xs
+      <p
+        className="
+        mt-1
 
-                  text-white/70
-                "
-                >
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
+        text-[11px]
+        md:text-xs
+
+        text-white/70
+      "
+      >
+        {item.label}
+      </p>
+    </div>
+  ))}
+</div>
         </div>
       </Motion>
 

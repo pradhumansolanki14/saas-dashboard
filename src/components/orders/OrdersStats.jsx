@@ -16,11 +16,11 @@ const OrdersStats = () => {
     <div
       className="
       grid
-      grid-cols-1
-      sm:grid-cols-2
+      grid-cols-2
       xl:grid-cols-4
 
-      gap-6
+      gap-4
+      lg:gap-6
     "
     >
       {orderStats.map(
@@ -36,10 +36,16 @@ const OrdersStats = () => {
                 index * 0.08,
             }}
           >
-            <AppCard>
+            <AppCard
+              className="
+              p-4
+              sm:p-6
+            "
+            >
               <p
                 className="
-                text-sm
+                text-xs
+                sm:text-sm
 
                 text-slate-600
                 dark:text-slate-400
@@ -48,10 +54,25 @@ const OrdersStats = () => {
                 {item.title}
               </p>
 
-              <div className="mt-4 flex items-end gap-3">
+              <div
+                className="
+                mt-4
+
+                flex
+                flex-col
+                sm:flex-row
+
+                sm:items-end
+
+                gap-2
+                sm:gap-3
+              "
+              >
                 <h2
                   className="
-                  text-4xl
+                  text-[28px]
+                  sm:text-4xl
+
                   font-bold
                   tracking-tight
 
@@ -62,7 +83,7 @@ const OrdersStats = () => {
                   {item.value}
                 </h2>
 
-                <div className="mb-1">
+                <div className="sm:mb-1">
                   <StatusBadge
                     status={
                       item.growth.includes(

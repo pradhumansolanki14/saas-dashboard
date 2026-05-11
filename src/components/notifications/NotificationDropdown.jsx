@@ -59,31 +59,40 @@ const NotificationDropdown = ({
           <Motion
             variant={animations.fadeDown}
             transition={transitions.smooth}
-            className="
-            absolute
-            top-[76px]
-            right-0
-            w-[390px]
-            max-w-[calc(100vw-20px)]
+           className="
+fixed
+top-[88px]
 
-            rounded-[36px]
+left-1/2
+-translate-x-1/2
 
-            bg-white
-            dark:bg-[#0f172a]
+sm:absolute
+sm:top-[76px]
+sm:right-0
+sm:left-auto
+sm:translate-x-0
 
-            border
-            border-white/10
+w-[94vw]
+max-w-[390px]
 
-            shadow-[0_20px_80px_rgba(0,0,0,0.55)]
+rounded-[36px]
 
-            backdrop-blur-3xl
+bg-white
+dark:bg-[#0f172a]
 
-            ring-1
-            ring-white/10
+border
+border-white/10
 
-            z-50
-            overflow-hidden
-          "
+shadow-[0_20px_80px_rgba(0,0,0,0.55)]
+
+backdrop-blur-3xl
+
+ring-1
+ring-white/10
+
+z-50
+overflow-hidden
+"
           >
             {/* TOP GLOW */}
             <div

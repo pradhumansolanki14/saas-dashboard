@@ -437,34 +437,43 @@ const Navbar = () => {
             />
           </button>
 
-          {/* PROFILE DROPDOWN */}
+       
 {/* PROFILE DROPDOWN */}
 {openProfile && (
   <Motion
     variant={animations.fadeDown}
     transition={transitions.smooth}
-    className="
-    absolute
-    top-[78px]
-    right-0
+   className="
+fixed
+top-[88px]
 
-    w-[340px]
+left-1/2
+-translate-x-1/2
 
-    rounded-[32px]
+sm:absolute
+sm:top-[78px]
+sm:right-0
+sm:left-auto
+sm:translate-x-0
 
-    bg-white
-    dark:bg-[#0f172a]
+w-[94vw]
+max-w-[340px]
 
-    border
-    border-black/5
-    dark:border-white/10
+rounded-[32px]
 
-    shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+bg-white
+dark:bg-[#0f172a]
 
-    overflow-hidden
+border
+border-black/5
+dark:border-white/10
 
-    z-[9999]
-  "
+shadow-[0_20px_80px_rgba(0,0,0,0.45)]
+
+overflow-hidden
+
+z-[9999]
+"
   >
     {/* GLOW */}
     <div

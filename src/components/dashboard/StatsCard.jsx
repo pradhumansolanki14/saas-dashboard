@@ -27,14 +27,15 @@ const StatsCard = ({
       <AppCard
         hover
         glow
-        className="relative overflow-hidden"
+        className="relative overflow-hidden p-2 sm:p-6"
       >
         {/* TOP */}
         <div className="flex items-start justify-between">
           <div>
             <p
               className="
-              text-sm
+              text-xs
+              md:text-sm
               font-medium
               text-slate-600
               dark:text-slate-400
@@ -45,12 +46,15 @@ const StatsCard = ({
 
             <h2
               className="
-              mt-3
-              text-3xl
+              mt-1
+              md:mt-3
+              text-xl
+              md:text-3xl
               font-bold
               tracking-tight
               text-slate-900
               dark:text-white
+
             "
             >
               {value}
@@ -59,10 +63,16 @@ const StatsCard = ({
 
           <div
             className="
-            w-14
-            h-14
+           md:w-14
+            md:h-14
+          p-1.5
+           ml-0.9
+              
+              p-1
+              md:p-0
 
-            rounded-2xl
+            rounded-xl
+            md:rounded-2xl
 
             bg-gradient-to-br
             from-cyan-500
@@ -76,29 +86,33 @@ const StatsCard = ({
 
             shadow-lg
             shadow-cyan-500/20
+             
           "
           >
-            <Icon size={24} />
+            <Icon size={24}  />
           </div>
         </div>
 
         {/* BOTTOM */}
-        <div className="mt-8 flex items-center justify-between">
-          <StatusBadge status="Active">
+        <div className="mt-5 md:mt-8 flex items-center justify-between gap-3 md:gap-0">
+         <div className="mt-2 md:mt-0">
+           <StatusBadge status="Active">
             {growth}
           </StatusBadge>
+         </div>
+         
 
           {/* MINI GRAPH */}
-          <div className="flex items-end gap-[5px] h-[35px]">
-            <div className="w-2 h-[40%] rounded-full bg-cyan-500/30" />
+          <div className="flex items-end gap-[5px] h-[35px] ">
+            <div className="w-1.5 md:w-2 h-[40%] rounded-full bg-cyan-500/30" />
 
-            <div className="w-2 h-[65%] rounded-full bg-cyan-500/40" />
+            <div className="w-1.5 md:w-2 h-[65%] rounded-full bg-cyan-500/40" />
 
-            <div className="w-2 h-[55%] rounded-full bg-cyan-500/50" />
+            <div className="w-1.5 md:w-2 h-[55%] rounded-full bg-cyan-500/50" />
 
-            <div className="w-2 h-[80%] rounded-full bg-cyan-500/70" />
+            <div className="w-1.5 md:w-2 h-[80%] rounded-full bg-cyan-500/70" />
 
-            <div className="w-2 h-full rounded-full bg-cyan-500" />
+            <div className="w-1.5 md:w-2 h-full rounded-full bg-cyan-500" />
           </div>
         </div>
       </AppCard>
